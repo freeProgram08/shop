@@ -4,5 +4,6 @@
 public class ZOU {
     public static void main(String[] args) {
         System.out.println("をし邹");
+        System.out.println();
     }
 }
