@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>注册</title>
@@ -20,9 +20,9 @@
         -->
         <div class="col-xs-offset-4 col-xs-4">
             <!--form事件：提交表单onsubmit-->
-           <!-- 如何绑定事件：事件名称="方法名()";-->
-          <!--  注意点：这个事件只会被type为submit的按钮激活
-            reset，button是不会激活的。-->
+            <!-- 如何绑定事件：事件名称="方法名()";-->
+            <!--  注意点：这个事件只会被type为submit的按钮激活
+              reset，button是不会激活的。-->
             <!--return 添加提交约束  不加return 100%提交
             加return   方法结果为false不提交-->
             <form class="form-horizontal" onsubmit="return verifyForm()">
@@ -41,27 +41,27 @@
                 <div class="form-group">
                     <label class="col-xs-3">性别：</label>
                     <div class="col-xs-9">
-                    <div class="radio ">
-                        <label>
-                            <input type="radio" name="gender">男
-                        </label>
-                        <label>
-                            <input type="radio" name="gender">女
-                        </label>
-                    </div>
+                        <div class="radio ">
+                            <label>
+                                <input type="radio" name="gender">男
+                            </label>
+                            <label>
+                                <input type="radio" name="gender">女
+                            </label>
                         </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="col-xs-3">爱好：</label>
                     <div class="col-xs-9">
-                    <div class="checkbox ">
-                        <label>
-                            <input type="checkbox" name="hobby">看小说
-                        </label>
-                        <label>
-                            <input type="checkbox" name="hobby">看电影
-                        </label>
-                    </div>
+                        <div class="checkbox ">
+                            <label>
+                                <input type="checkbox" name="hobby">看小说
+                            </label>
+                            <label>
+                                <input type="checkbox" name="hobby">看电影
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -148,17 +148,17 @@
 <script type="text/javascript">
     /*验证表单*/
     function verifyForm() {
-/*        console.log("激活验证");
-        alert("已被激活");*/
-       /* 获取到提示标签对象*/
-       var error = document.getElementById("error");
-      /*  input输入框的用户输入，
-        就是input标签对象的value属性值*/
-      var userName = document.getElementById("userName");
+        /*        console.log("激活验证");
+         alert("已被激活");*/
+        /* 获取到提示标签对象*/
+        var error = document.getElementById("error");
+        /*  input输入框的用户输入，
+         就是input标签对象的value属性值*/
+        var userName = document.getElementById("userName");
         if(userName.value==""||userName.value==null){
-           /* inner开头更改的是标签<>.....</>....就是它更改的内容*/
-           /*innerText只能赋值字符串，
-            innerHtml不单是字符串，还可以包含html标签*/
+            /* inner开头更改的是标签<>.....</>....就是它更改的内容*/
+            /*innerText只能赋值字符串，
+             innerHtml不单是字符串，还可以包含html标签*/
             error.innerText="用户名不能为空";
             return false;
         }
@@ -173,7 +173,7 @@
             return false;
         }
         /*    isNaN() 方法 需要被判断值不为undefined ,null
-        不是数字 返回true  是数字返回false*/
+         不是数字 返回true  是数字返回false*/
         if(isNaN(age.value)){
             error.innerText="年龄必须为数值";
             return false;
