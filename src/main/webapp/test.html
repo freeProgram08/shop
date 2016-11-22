@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 内部样式模板-->
+    <style>
+        /*   通过标签名建立模板*/
+        b{
+            font-size: 60px
+        }
+        /*通过标签属性id建立模板*/
+        /*id模板高于标签模板*/
+        /*id是唯一性标识，它的模板只用于一个标签，
+        以及它里面的内联标签*/
+        #one{
+            font-size: 160px
+        }
+        /*通过属性class建立模板*/
+        /*class模板高于标签模板*/
+        .T120{
+            font-size: 120px
+        }
+        /*   id>class>标签 */
+        .text-center{
+            text-align: right;//样式冲突左对齐
+        }
+        #redP .red em{
+            font-size: 200px;
+        }
+
+        .red em{
+            font-size:14px;
+        }
+    </style>
+<!--    外部样式模板-->
+    <link type="text/css"
+          rel="stylesheet"
+          href="css/bootstrap.min.css">
+
+</head>
+<body>
+<!--模板的作用，
+覆盖掉浏览器对标签的默认显示效果-->
+<!--直接在标签上定义style，内联样式 优先级高于一切样式-->
+<form action="test.html?ss=1" method="post">
+    <input name="userName">
+    <input type="submit">
+</form>
+</body>
+</html>

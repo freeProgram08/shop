@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <!--        定义服务名称-->
+        <servlet-name>login</servlet-name>
+        <!--指定服务servlet class-->
+        <servlet-class>myWeb.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <!--        定义服务名称-->
+        <servlet-name>login</servlet-name>
+        <!--指定的绑定服务地址-->
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <!--        定义服务名称-->
+        <servlet-name>index1</servlet-name>
+        <!--指定服务servlet class-->
+        <servlet-class>myWeb.servlet.Index1Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <!--        定义服务名称-->
+        <servlet-name>index1</servlet-name>
+        <!--指定的绑定服务地址-->
+        <url-pattern>/index1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <!--        定义服务名称-->
+        <servlet-name>info</servlet-name>
+        <!--指定服务servlet class-->
+        <servlet-class>myWeb.servlet.InfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <!--        定义服务名称-->
+        <servlet-name>info</servlet-name>
+        <!--指定的绑定服务地址-->
+        <url-pattern>/info</url-pattern>
+    </servlet-mapping>
+</web-app>

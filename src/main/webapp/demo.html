@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cssDemo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+<!--    <p class="text-left">Left aligned text.</p>
+    <p class="text-center text-uppercase" title="这是假的">我是勇者a</p>
+    <p class="text-right">Right aligned text.</p>
+    <p class="text-justify">Justified text.</p>
+    <p class="text-nowrap">No wrap text.</p>
+    <p class="text-uppercase">aaaaaaaaaa</p>
+    <ul class="list-unstyled">
+        <li>...</li>
+    </ul>-->
+    <div class="row">
+      <!--  每行的空间总值是12-->
+    <form class="col-xs-offset-4 col-xs-4"  style="background-color: red">
+        <div class="form-group">
+            <label >用户名：</label>
+            <input type="email" class="form-control" placeholder="请输入用户名">
+        </div>
+        <div class="form-group">
+            <label >密码：</label>
+            <input type="password" class="form-control"  placeholder="请输入密码">
+        </div>
+<!--        <div class="form-group">
+            <label >File input</label>
+            <input type="file" >
+            <p class="help-block">Example block-level help text here.</p>
+        </div>-->
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> 是否保存密码
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">登录</button>
+    </form>
+        </div>
+
+    </div>
+</body>
+</html>
