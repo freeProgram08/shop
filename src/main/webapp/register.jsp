@@ -25,17 +25,21 @@
               reset，button是不会激活的。-->
             <!--return 添加提交约束  不加return 100%提交
             加return   方法结果为false不提交-->
-            <form class="form-horizontal" onsubmit="return verifyForm()">
+            <form class="form-horizontal"
+                  action="/register" method="post"
+                  onsubmit="return verifyForm()">
                 <div class="form-group">
                     <label class="col-xs-3">用户名：</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control " id="userName">
+                        <input type="text" class="form-control " name="userName"
+                               id="userName">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-xs-3">密码：</label>
                     <div class="col-xs-9">
-                        <input type="password" class="form-control " id="pass">
+                        <input type="password" class="form-control "
+                              name="password" id="pass">
                     </div>
                 </div>
                 <div class="form-group">
@@ -43,10 +47,10 @@
                     <div class="col-xs-9">
                         <div class="radio ">
                             <label>
-                                <input type="radio" name="gender">男
+                                <input type="radio" name="gender" value="true">男
                             </label>
                             <label>
-                                <input type="radio" name="gender">女
+                                <input type="radio" name="gender" value="false">女
                             </label>
                         </div>
                     </div>
@@ -56,10 +60,10 @@
                     <div class="col-xs-9">
                         <div class="checkbox ">
                             <label>
-                                <input type="checkbox" name="hobby">看小说
+                                <input type="checkbox" name="hobby" value="lookBook">看小说
                             </label>
                             <label>
-                                <input type="checkbox" name="hobby">看电影
+                                <input type="checkbox" name="hobby" value="watchVideo">看电影
                             </label>
                         </div>
                     </div>
@@ -67,7 +71,8 @@
                 <div class="form-group">
                     <label class="col-xs-3">年龄：</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" id="age">
+                        <input type="text" class="form-control"
+                               name="age" id="age">
                     </div>
                 </div>
                 <div class="form-group">
