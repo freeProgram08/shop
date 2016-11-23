@@ -93,12 +93,7 @@
                                <%-- jsp标签--%>
                                 <%--out可以输出html内容
                                    getAttribute 可以获取setAttribute存储内容--%>
-                                <%
-                                    Object error = request.getAttribute("error");
-                                    if(error!=null){//有才显示
-                                        out.print(error);
-                                    }
-                                %>
+                                ${requestScope.error}
                             </h6>
                         </div>
                         <div class="form-group M20">
