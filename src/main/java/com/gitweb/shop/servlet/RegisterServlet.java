@@ -31,6 +31,15 @@ public class RegisterServlet extends HttpServlet {
         //getParameterValues用于多选框，用于同一个name有多个值的情况
         String[] hobbies = req.getParameterValues("hobby");
         //完成了接受请求参数
+        //不允许用户名重复
+        User oldUser = userDao.verifyUserName(userName);
+        if(oldUser!=null){//如果不为空，说明数据库已存在一个该用户
+            //存储错误信息
+            req.setAttribute("error","用户名已存在");
+            //请求转发
+            req.getRequestDispatcher("/register.jsp").forward(req,resp);
+            return;//结束注册业务
+        }
         //user对象的作用，数据库跟java之间的桥梁
         User user = new User();
         user.setGender(Boolean.parseBoolean(gender));
@@ -42,7 +51,5 @@ public class RegisterServlet extends HttpServlet {
         //1.传递请求  req  可以传输数据
         //2.重定向   resp   不可以传数据
         resp.sendRedirect("/registerSuccess.html");
-        System.out.println(age+userName+password+gender+hobbies);
-
     }
 }

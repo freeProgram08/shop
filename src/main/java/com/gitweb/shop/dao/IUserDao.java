@@ -9,4 +9,6 @@ import com.gitweb.shop.entity.User;
 public interface IUserDao {
     //保存用户信息
     void saveUser(User user);
+     //通过用户名查询用户
+    User  verifyUserName(String userName);
 }

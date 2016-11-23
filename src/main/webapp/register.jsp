@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="row">
         <h1 class="text-center">用户注册</h1>
-        <h6 class="text-center" style="color: red" id="error"></h6>
+        <h6 class="text-center" style="color: red" id="error">${requestScope.error}</h6>
     </div>
     <div class="row">
         <!--form-horizontal form-group连用
