@@ -38,6 +38,8 @@ public class UserDao extends BaseDao implements IUserDao  {
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("执行user保存语句失败");
+        }finally {
+            closeAll();//释放资源
         }
     }
 
@@ -81,6 +83,8 @@ public class UserDao extends BaseDao implements IUserDao  {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            closeAll();//释放资源
         }
         if(users.size()==0){//元素为0 没有查询到数据
             return null;//null作为没查询到值
