@@ -43,6 +43,6 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("user",user);
         //重定向到登录成功页面
-        resp.sendRedirect("/loginResp.html");
+        resp.sendRedirect("/content.jsp");
     }
 }
