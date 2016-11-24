@@ -59,6 +59,16 @@ public class UserDao extends BaseDao implements IUserDao  {
         return  users.get(0);//查询到值返回第一个
     }
 
+    @Override
+    public List<User> selectAllUser() {
+        String sql="SELECT * FROM user";
+        //赋值sql
+        setSql(sql,new ArrayList());
+        //执行查询
+        List<User> users = getUsers();
+        return users;
+    }
+
     //user表集合查询转换
     private List<User> getUsers(){
         //准备接受user对象的集合
@@ -73,6 +83,7 @@ public class UserDao extends BaseDao implements IUserDao  {
                 user.setUserName(result.getString("user_name"));
                 user.setPassword(result.getString("password"));
                 user.setGender(result.getBoolean("gender"));
+                user.setAge(result.getInt("age"));
                 String hobbiesStr = result.getString("hobbies");
                 //消除[]
                 String substring = hobbiesStr.substring(1, hobbiesStr.length()-1).trim();
