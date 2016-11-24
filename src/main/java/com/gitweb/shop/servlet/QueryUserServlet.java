@@ -27,7 +27,7 @@ public class QueryUserServlet extends HttpServlet {
         List<User> users = userDao.selectAllUser();
         req.setAttribute("users",users);
         HttpSession session = req.getSession();
-        session.setAttribute("servletName","queryServlet");
+        session.setAttribute("servletName","queryUser");
         //传递请求
         req.getRequestDispatcher("/content.jsp").forward(req,resp);
     }

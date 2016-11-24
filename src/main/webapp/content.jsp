@@ -23,46 +23,21 @@
     <div class="row">
         <div class="col-xs-3">
             <ul class="nav nav-pills nav-stacked" role="tablist">
-                <li <c:if test="${sessionScope.servletName eq 'queryServlet'}">class="active"</c:if>>
+                <li <c:if test="${sessionScope.servletName eq 'queryUser'}">class="active"</c:if>>
                     <a href="/queryUser">查看用户</a>
                 </li>
-                <li ><a href="#">添加商品</a></li>
+                <li <c:if test="${sessionScope.servletName eq 'addGoods'}">class="active"</c:if>>
+                    <a href="/addGoods">添加商品</a>
+                </li>
                 <li ><a href="#">查看商品</a></li>
             </ul>
         </div>
-        <div class="col-xs-9">
-            <div>
-                <ol class="breadcrumb">
-                    <li><a href="#">内容主页</a></li>
-                    <li class="active">查看用户</li>
-                </ol>
-            </div>
-            <div>
-                <table class="table table-hover">
-                    <tr>
-                        <th>编号</th>
-                        <th>用户名</th>
-                        <th>性别</th>
-                        <th>年龄</th>
-                        <th>爱好</th>
-                    </tr>
-                    <%--一个user代表一个tr--%>
-                    <c:forEach items="${requestScope.users}" var="user">
-                    <tr>
-                        <td>${user.id}</td>
-                        <td>${user.userName}</td>
-                        <td>${user.gender?'男':'女'}</td>
-                        <td>${user.age}</td>
-                        <td>
-                        <c:forEach items="${user.hobbies}" var="hobby">
-                        ${hobby}&nbsp;
-                            </c:forEach>
-                        </td>
-                    </tr>
-                    </c:forEach>
-                </table>
-            </div>
-        </div>
+     <c:if test="${sessionScope.servletName eq 'queryUser'}">
+         <jsp:include page="/pluginJsp/queryUser.jsp"></jsp:include>
+     </c:if>
+        <c:if test="${sessionScope.servletName eq 'addGoods'}">
+            <jsp:include page="/pluginJsp/addGoods.jsp"></jsp:include>
+        </c:if>
     </div>
 </div>
 </body>
