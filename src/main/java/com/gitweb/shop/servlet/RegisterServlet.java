@@ -1,8 +1,8 @@
 package com.gitweb.shop.servlet;
 
 import com.gitweb.shop.dao.IUserDao;
-import com.gitweb.shop.dao.UserDao;
 import com.gitweb.shop.entity.User;
+import com.gitweb.shop.utli.MybatisMapperUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * 用户注册
@@ -18,7 +19,7 @@ import java.io.IOException;
 public class RegisterServlet extends HttpServlet {
     //一般关于业务相关的对象，我们会抽成属性
     //方便方法共享
-    IUserDao userDao=new UserDao();
+    IUserDao userDao= MybatisMapperUtil.getMapper(IUserDao.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
          /*为了支持中文，指定字符编码*/
@@ -44,7 +45,7 @@ public class RegisterServlet extends HttpServlet {
         User user = new User();
         user.setGender(Boolean.parseBoolean(gender));
         user.setAge(Integer.parseInt(age));
-        user.setHobbies(hobbies);
+        user.setHobbies(Arrays.toString(hobbies));
         user.setPassword(password);
         user.setUserName(userName);
         userDao.saveUser(user);

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gitweb.shop.dao.IUserDao">
+<!--    resultMap 自定义类型
+    id 类型名  不能重复
+    type 跟数据库匹配的java类-->
+    <!--<id>主键-->
+   <!-- <result> 其他非主键字段-->
+   <!-- property java类的属性名
+    column  数据库表的字段名-->
+    <resultMap id="userMap" type="com.gitweb.shop.entity.User">
+        <id property="id" column="id"/>
+        <result property="userName" column="user_name"/>
+        <result property="age" column="age"/>
+        <result property="gender" column="gender"/>
+        <result property="hobbies" column="hobbies"/>
+    </resultMap>
+    <!--#{属性名}调用参数对象对应属性get方法
+    前提，参数只能有一个
+    -->
+   <!-- insert 代表sql插入-->
+    <insert id="saveUser">
+        INSERT INTO user(user_name,password,age,gender,hobbies)VALUES (
+        #{userName},#{password},#{age},#{gender},#{hobbies})
+    </insert>
+    <!--select 代表sql查询 resultType代表方法返回类型-->
+      <select id="verifyUserName" resultMap="userMap">
+          SELECT * FROM  user WHERE user_name=#{userName}
+      </select>
+
+    <select id="selectAllUser" resultMap="userMap">
+        SELECT * FROM user
+    </select>
+    </mapper>

@@ -23,11 +23,7 @@
                     <td>${user.userName}</td>
                     <td>${user.gender?'男':'女'}</td>
                     <td>${user.age}</td>
-                    <td>
-                        <c:forEach items="${user.hobbies}" var="hobby">
-                            ${hobby}&nbsp;
-                        </c:forEach>
-                    </td>
+                    <td>${user.hobbies}</td>
                 </tr>
             </c:forEach>
         </table>

@@ -1,8 +1,10 @@
 package com.gitweb.shop.servlet;
 
 import com.gitweb.shop.dao.IUserDao;
-import com.gitweb.shop.dao.UserDao;
+
 import com.gitweb.shop.entity.User;
+import com.gitweb.shop.utli.MybatisMapperUtil;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +19,8 @@ import java.io.IOException;
  */
 @WebServlet(name = "login",urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
-    IUserDao userDao=new UserDao();
+    //通过mybatis方式获取接口对象
+    IUserDao userDao= MybatisMapperUtil.getMapper(IUserDao.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");

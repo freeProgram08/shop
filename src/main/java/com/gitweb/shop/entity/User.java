@@ -8,9 +8,15 @@ public class User {
     private String  userName;
     private String password;
     private Integer  age;
-    private  String[] hobbies;
+    private  String hobbies;
     private  Boolean gender;
+    public String getHobbies() {
+        return hobbies;
+    }
 
+    public void setHobbies(String hobbies) {
+        this.hobbies = hobbies;
+    }
     public Integer getId() {
         return id;
     }
@@ -41,14 +47,6 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public String[] getHobbies() {
-        return hobbies;
-    }
-
-    public void setHobbies(String[] hobbies) {
-        this.hobbies = hobbies;
     }
 
     public Boolean getGender() {

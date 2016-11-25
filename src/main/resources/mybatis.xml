@@ -40,5 +40,7 @@
           <!--通常一张表对应一个mapper  是为了执行sql语句-->
        <!-- resource  指定一个存放sql语句的xml文件地址-->
         <mapper resource="test.xml"/>
+        <!--关联新的mapper配置-->
+        <mapper resource="mapper/user.xml"/>
     </mappers>
 </configuration>
