@@ -12,7 +12,10 @@
          <!-- id属性 唯一识别，不能重复，通常只会配置一个-->
         <environment id="development">
            <!-- transactionManager  数据库事务配置-->
-            <transactionManager type="JDBC"/>
+           <!-- 1.JDBC 这个配置直接简单使用了JDBC的提交和回滚设置。
+            2.MANAGED 没有事务。-->
+
+            <transactionManager type="MANAGED"/>
            <!-- dataSource    jdbc 连接属性配置 如用户名，密码，url-->
 <!--        type  分三种：
               UNPOOLED    不使用连接池的数据源

@@ -45,6 +45,8 @@ public class MybatisMapperUtil {
     public static <T> T getMapper(Class<T> tClass) {
         //创建session，创建jdbc连接
         SqlSession session = factory.openSession();
+        //关闭事务
+        session.commit(false);
         //得到接口对象    包装statement以及实现接口细节
         // 原理：使用了ava高级特性映射  Class  Method Field
         T t = session.getMapper(tClass);
