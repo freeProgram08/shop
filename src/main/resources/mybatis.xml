@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        <!--configuration代表一种xml类型-->
+<!--          在mybatis里代表jdbc连接配置，以及
+          jdbc中statement关联配置的配置文件-->
+<configuration>
+    <!--environments  jdbc连接池 不同数据库的连接配置-->
+    <environments default="development">
+        <!--environment  其中的一个jdbc连接-->
+         <!-- id属性 唯一识别，不能重复，通常只会配置一个-->
+        <environment id="development">
+           <!-- transactionManager  数据库事务配置-->
+            <transactionManager type="JDBC"/>
+           <!-- dataSource    jdbc 连接属性配置 如用户名，密码，url-->
+<!--        type  分三种：
+              UNPOOLED    不使用连接池的数据源
+             POOLED      使用连接池的数据源
+             JNDI            使用JNDI实现的数据源-->
+            <dataSource type="POOLED">
+              <!--  property  具体属性标签 跟name连用-->
+               <!-- driver  jdbc Driver.class所在package位置
+               对应jdbc 中的加载驱动Class.forName("com.mysql.jdbc.Driver")
+               url  jdbc协议描述
+               username     用户名
+                password    密码
+               -->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/shop"/>
+                <property name="username" value="root"/>
+                <property name="password" value="12345"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- mappers 可以看成jdbc配置statement关联-->
+    <!--mappers statement的集合-->
+    <mappers>
+        <!--mapper 其中的一个statement-->
+          <!--通常一张表对应一个mapper  是为了执行sql语句-->
+       <!-- resource  指定一个存放sql语句的xml文件地址-->
+        <mapper resource="test.xml"/>
+    </mappers>
+</configuration>

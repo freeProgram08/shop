@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper  在mybatis中代表存放SQL语句的xml文件-->
+<!--该文件的使用必须依赖一个接口文件
+        namespace 用于指定接口文件所在package地址-->
+<mapper namespace="com.gitweb.shop.dao.ITestDao">
+   <!-- select  代表查询
+    id  指定接口中的方法名
+    resultType,跟resultMap代表 方法的返回类型-->
+    <!--resultType 填的值是package的地址
+    指定的Class类型必须是JavaBean
+    JavaBean 条件：
+   1. 有一个空构造
+   2.所有的属性用标志的get，set方法封装
+    -->
+    <select id="selectAllUser" resultType="com.gitweb.shop.entity.User">
+        select *  from user
+    </select>
+</mapper>
