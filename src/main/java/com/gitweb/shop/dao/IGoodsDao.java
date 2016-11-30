@@ -12,4 +12,6 @@ public interface IGoodsDao {
     void  saveGoods(Goods goods);
     //查询所有的商品
     List<Goods> getAllGoods();
+    //根据商品查询
+    List<Goods> selectByGoodsName(String goodsName);
 }

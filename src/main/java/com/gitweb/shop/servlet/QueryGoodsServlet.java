@@ -35,4 +35,23 @@ public class QueryGoodsServlet extends HttpServlet {
         //重定向 不能保留请求数据，传递请求可以
         req.getRequestDispatcher("/content.jsp").forward(req,resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
+        String goodsName = req.getParameter("goodsName");
+
+        //查询数据库
+        IGoodsDao goodsDao=util.getMapper(IGoodsDao.class);
+        List<Goods>allGoods=goodsDao.selectByGoodsName(goodsName);
+
+        req.setAttribute("allGoods",allGoods);
+        //获取session
+        HttpSession session = req.getSession();
+        session.setAttribute("servletName","queryGoods");
+        //重定向 不能保留请求数据，传递请求可以
+        req.getRequestDispatcher("/content.jsp").forward(req,resp);
+    }
 }

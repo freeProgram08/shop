@@ -21,4 +21,8 @@
       <select id="getAllGoods" resultMap="goodsMap">
           SELECT * FROM goods
       </select>
+
+    <select id="selectByGoodsName" resultMap="goodsMap" >
+        SELECT *FROM goods WHERE goods_name=#{a}
+    </select>
 </mapper>

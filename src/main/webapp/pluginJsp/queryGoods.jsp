@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@  taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="col-xs-9">
-    <form class="form-inline">
+    <form class="form-inline" action="/queryGoods" method="post">
         <div class="form-group">
             <label class="sr-only">商品名</label>
-            <input type="email" class="form-control" placeholder="商品名">
+            <input type="text" class="form-control" name="goodsName"
+                   placeholder="商品名">
         </div>
         <div class="form-group">
             <label class="sr-only">商品类型</label>
