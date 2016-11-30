@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace 制定实现接口地址-->
+<mapper namespace="com.gitweb.shop.dao.IGoodsDao">
+    <!--type指定的是javaBean的地址-->
+    <resultMap id="goodsMap" type="com.gitweb.shop.entity.Goods">
+       <!-- property 指定的是javaBean的属性
+        column 指定是数据的字段名-->
+        <!--除了主键用id标签，其他都用result-->
+        <id  property="id" column="id"/>
+        <result  property="goodsName" column="goods_name"/>
+        <result  property="type" column="type"/>
+        <result  property="price" column="price"/>
+    </resultMap>
+    <insert id="saveGoods">
+        INSERT INTO goods(goods_name,type,price)VALUES
+        (#{goodsName},#{type},#{price})
+    </insert>
+      <select id="getAllGoods" resultMap="goodsMap">
+          SELECT * FROM goods
+      </select>
+</mapper>

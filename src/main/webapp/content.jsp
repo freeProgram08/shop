@@ -29,7 +29,9 @@
                 <li <c:if test="${sessionScope.servletName eq 'addGoods'}">class="active"</c:if>>
                     <a href="/addGoods">添加商品</a>
                 </li>
-                <li ><a href="#">查看商品</a></li>
+                <li <c:if test="${sessionScope.servletName eq 'queryGoods'}">class="active"</c:if>>
+                    <a href="/queryGoods">查询商品</a>
+                </li>
             </ul>
         </div>
      <c:if test="${sessionScope.servletName eq 'queryUser'}">
@@ -37,6 +39,9 @@
      </c:if>
         <c:if test="${sessionScope.servletName eq 'addGoods'}">
             <jsp:include page="/pluginJsp/addGoods.jsp"></jsp:include>
+        </c:if>
+        <c:if test="${sessionScope.servletName eq 'queryGoods'}">
+            <jsp:include page="/pluginJsp/queryGoods.jsp"></jsp:include>
         </c:if>
     </div>
 </div>
