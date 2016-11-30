@@ -20,7 +20,7 @@ import java.io.IOException;
 @WebServlet(name = "login",urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     //通过mybatis方式获取接口对象
-    IUserDao userDao= MybatisMapperUtil.getMapper(IUserDao.class);
+    MybatisMapperUtil util= new MybatisMapperUtil();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
         String userName = req.getParameter("userName");
         String password = req.getParameter("pass");
         //根据用户名查询user数据
+        IUserDao userDao = util.getMapper(IUserDao.class);
         User user = userDao.verifyUserName(userName);
         //如果user为null ，说明数据库没有数据  该用户名未注册
         if(user==null){

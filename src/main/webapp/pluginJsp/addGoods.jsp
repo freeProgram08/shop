@@ -9,12 +9,11 @@
     </div>
     <div>
         <form class="form-horizontal"
-              action="" method="post">
+              action="/addGoods" method="post">
             <div class="form-group">
                 <label class="col-xs-3">商品名：</label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control " name="foodName"
-                    >
+                    <input type="text" class="form-control " name="goodsName">
                 </div>
             </div>
             <div class="form-group">
@@ -22,10 +21,10 @@
                 <div class="col-xs-9">
                     <div class="radio ">
                         <label>
-                            <input type="radio" name="type" value="food">食品
+                            <input type="radio" name="type" value="1">食品
                         </label>
                         <label>
-                            <input type="radio" name="type" value="clothes">服装
+                            <input type="radio" name="type" value="2">服装
                         </label>
                     </div>
                 </div>

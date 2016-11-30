@@ -15,6 +15,7 @@ import java.util.List;
  * mybatis 接口对象获取工具类
  */
 public class MybatisMapperUtil {
+    SqlSession session;
     //单例模式
     private static final SqlSessionFactory factory = getFactory();
     //得到xml解析对象
@@ -42,11 +43,9 @@ public class MybatisMapperUtil {
      * @param <T>     接口类型
      * @return  返回该接口的对象
      */
-    public static <T> T getMapper(Class<T> tClass) {
+    public  <T> T getMapper(Class<T> tClass) {
         //创建session，创建jdbc连接
-        SqlSession session = factory.openSession();
-        //关闭事务
-        session.commit(false);
+       session = factory.openSession();
         //得到接口对象    包装statement以及实现接口细节
         // 原理：使用了ava高级特性映射  Class  Method Field
         T t = session.getMapper(tClass);

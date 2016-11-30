@@ -19,7 +19,7 @@ import java.util.Arrays;
 public class RegisterServlet extends HttpServlet {
     //一般关于业务相关的对象，我们会抽成属性
     //方便方法共享
-    IUserDao userDao= MybatisMapperUtil.getMapper(IUserDao.class);
+    MybatisMapperUtil util= new MybatisMapperUtil();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
          /*为了支持中文，指定字符编码*/
@@ -33,6 +33,7 @@ public class RegisterServlet extends HttpServlet {
         String[] hobbies = req.getParameterValues("hobby");
         //完成了接受请求参数
         //不允许用户名重复
+        IUserDao userDao = util.getMapper(IUserDao.class);
         User oldUser = userDao.verifyUserName(userName);
         if(oldUser!=null){//如果不为空，说明数据库已存在一个该用户
             //存储错误信息
