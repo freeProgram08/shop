@@ -45,5 +45,7 @@ public class AddGoodsServlet extends HttpServlet {
         IGoodsDao goodsDao = util.getMapper(IGoodsDao.class);
         //调用方法，执行操作
         goodsDao.saveGoods(goods);
+        //不需要传值 用重定向  就是超链接
+        resp.sendRedirect("/queryGoods");
     }
 }

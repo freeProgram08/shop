@@ -25,4 +25,21 @@
     <select id="selectByGoodsName" resultMap="goodsMap" >
         SELECT *FROM goods WHERE goods_name=#{a}
     </select>
+   <!-- 动态sql 需用特殊标签如：<where>-->
+  <!--  <if test="goodsName!=null"> 条件判断标签
+    当test表达式为true是才会添加标签内内容-->
+    <select id="selectByGoods" resultMap="goodsMap">
+        SELECT *FROM   goods
+        <where>
+            <if test="goodsName!=null">
+                goods_name=#{goodsName}
+            </if>
+            <if test="type!=null">
+                and type=#{type}
+            </if>
+            <if test="price!=null">
+                and price=#{price}
+            </if>
+        </where>
+    </select>
 </mapper>

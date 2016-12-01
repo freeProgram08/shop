@@ -10,13 +10,15 @@
         <div class="form-group">
             <label class="sr-only">商品类型</label>
             <div class="checkbox">
-                <input type="radio" name="type">食品
-                <input type="radio" name="type">服装
+                <%--radio checkbox 类型的input默认传值是on，
+                所以要用value属性指定有意义的值--%>
+                <input type="radio" name="type" value="1">食品
+                <input type="radio" name="type" value="2">服装
             </div>
         </div>
         <div class="form-group">
             <label class="sr-only">价格</label>
-            <input type="email" class="form-control" placeholder="价格">
+            <input type="text" class="form-control" name="price" placeholder="价格">
         </div>
         <button type="submit" class="btn btn-default">搜索</button>
     </form>

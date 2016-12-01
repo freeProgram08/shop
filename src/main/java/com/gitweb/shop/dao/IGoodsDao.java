@@ -14,4 +14,6 @@ public interface IGoodsDao {
     List<Goods> getAllGoods();
     //根据商品查询
     List<Goods> selectByGoodsName(String goodsName);
+    //根据商品对象属性值查询商品
+    List<Goods> selectByGoods(Goods goods);
 }
