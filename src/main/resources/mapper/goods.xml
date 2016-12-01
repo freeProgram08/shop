@@ -42,4 +42,8 @@
             </if>
         </where>
     </select>
+
+    <delete id="destroyGoodsById">
+        DELETE FROM goods WHERE id=#{id}
+    </delete>
 </mapper>

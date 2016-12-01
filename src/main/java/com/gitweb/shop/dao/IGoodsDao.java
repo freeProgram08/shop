@@ -16,4 +16,6 @@ public interface IGoodsDao {
     List<Goods> selectByGoodsName(String goodsName);
     //根据商品对象属性值查询商品
     List<Goods> selectByGoods(Goods goods);
+    //根据id删除商品
+    void destroyGoodsById(Integer id);
 }

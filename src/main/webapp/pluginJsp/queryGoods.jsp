@@ -37,6 +37,11 @@
         <td>${good.goodsName}</td>
         <td>${good.type==1?"食品":good.type==2?"衣服":"其他"}</td>
         <td>${good.price}</td>
+  <%--          ?后面代表超链接传值
+            key=value这种值对进行传值的
+            id=2;  id是key,value是2
+            key就是表单里name的值 name="id"--%>
+        <td><a href="/destroyGoodsById?id=${good.id}"><i class="delete_log"></i></a></td>
         </tr>
         </c:forEach>
     </table>

@@ -1,0 +1,14 @@
+.delete_log{
+    height: 17px;
+    width: 1px;
+    padding-left: 17px;
+    overflow: hidden;
+    vertical-align: middle;
+    font-size: 0px;
+    display: inline-block;
+    visibility: visible;
+    background: url('/img/mark_taobao.png') no-repeat -239px -176px
+}
+.delete_log:hover{
+    cursor:hand;
+}

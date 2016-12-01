@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>内容主页</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/diyCss.css">
     <style>
         .headDIV{
             height: 100px;
