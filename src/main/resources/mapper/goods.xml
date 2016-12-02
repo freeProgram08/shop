@@ -50,4 +50,10 @@
     <select id="selectGoodsById" resultMap="goodsMap">
         SELECT * FROM goods WHERE id=#{id}
     </select>
+
+    <update id="updateGoodsById" >
+        UPDATE goods SET  goods_name=#{goodsName}
+        ,type=#{type},price=#{price}
+        WHERE id=#{id}
+    </update>
 </mapper>

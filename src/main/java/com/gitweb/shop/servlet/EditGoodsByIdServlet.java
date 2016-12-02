@@ -33,4 +33,31 @@ public class EditGoodsByIdServlet extends HttpServlet {
         //跳转到修改界面
         req.getRequestDispatcher("/content.jsp").forward(req,resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+        //取值
+        String id = req.getParameter("id");
+        String goodsName = req.getParameter("goodsName");
+        String type = req.getParameter("type");
+        String price = req.getParameter("price");
+        Integer idValue=Integer.parseInt(id);
+        Integer typeValue=Integer.parseInt(type);
+        Double  priceValue=Double.parseDouble(price);
+
+        Goods goods = new Goods();
+        goods.setGoodsName(goodsName);
+        goods.setType(typeValue);
+        goods.setPrice(priceValue);
+        goods.setId(idValue);
+        IGoodsDao dao=util.getMapper(IGoodsDao.class);
+        //传入一个goods对象
+        //根据id修改对应id的记录值为
+        //该对象各属性的值
+        dao.updateGoodsById(goods);
+        //不传值  重定向
+        resp.sendRedirect("/queryGoods");
+    }
 }

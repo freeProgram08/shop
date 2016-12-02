@@ -20,5 +20,7 @@ public interface IGoodsDao {
     void destroyGoodsById(Integer id);
     //根据id查询商品
     Goods  selectGoodsById(Integer id);
-
+     //根据id修改数据库记录
+     // 为goods对象所带值
+    void updateGoodsById(Goods goods);
 }
