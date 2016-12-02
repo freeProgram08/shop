@@ -11,4 +11,21 @@
 }
 .delete_log:hover{
     cursor:hand;
+    background: url('/img/mark_taobao.png') no-repeat -92px -176px
+}
+
+.edit_log{
+    height: 17px;
+    width: 1px;
+    padding-left: 17px;
+    overflow: hidden;
+    vertical-align: middle;
+    font-size: 0px;
+    display: inline-block;
+    visibility: visible;
+    background: url('/img/mark_taobao.png') no-repeat -270px -176px
+}
+.edit_log:hover{
+    cursor:hand;
+    background: url('/img/mark_taobao.png') no-repeat -124px -176px
 }

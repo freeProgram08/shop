@@ -41,8 +41,11 @@
         <c:if test="${sessionScope.servletName eq 'addGoods'}">
             <jsp:include page="/pluginJsp/addGoods.jsp"></jsp:include>
         </c:if>
-        <c:if test="${sessionScope.servletName eq 'queryGoods'}">
+        <c:if test="${sessionScope.servletName eq 'queryGoods' and  empty requestScope.goods}">
             <jsp:include page="/pluginJsp/queryGoods.jsp"></jsp:include>
+        </c:if>
+        <c:if test="${sessionScope.servletName eq 'queryGoods' and not empty requestScope.goods}">
+            <jsp:include page="/pluginJsp/editGoods.jsp"></jsp:include>
         </c:if>
     </div>
 </div>

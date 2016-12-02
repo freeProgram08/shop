@@ -46,4 +46,8 @@
     <delete id="destroyGoodsById">
         DELETE FROM goods WHERE id=#{id}
     </delete>
+
+    <select id="selectGoodsById" resultMap="goodsMap">
+        SELECT * FROM goods WHERE id=#{id}
+    </select>
 </mapper>

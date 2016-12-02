@@ -42,6 +42,7 @@
             id=2;  id是key,value是2
             key就是表单里name的值 name="id"--%>
         <td><a href="/destroyGoodsById?id=${good.id}"><i class="delete_log"></i></a></td>
+            <td><a href="/editGoodsById?id=${good.id}"><i class="edit_log"></i></a></td>
         </tr>
         </c:forEach>
     </table>

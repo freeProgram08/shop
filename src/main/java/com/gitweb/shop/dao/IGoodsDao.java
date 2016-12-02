@@ -18,4 +18,7 @@ public interface IGoodsDao {
     List<Goods> selectByGoods(Goods goods);
     //根据id删除商品
     void destroyGoodsById(Integer id);
+    //根据id查询商品
+    Goods  selectGoodsById(Integer id);
+
 }
