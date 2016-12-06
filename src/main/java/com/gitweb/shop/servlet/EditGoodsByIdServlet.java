@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Administrator on 2016/12/2.
+ * 根据id修改商品
  */
 @WebServlet(urlPatterns = "/editGoodsById")
 public class EditGoodsByIdServlet extends HttpServlet {

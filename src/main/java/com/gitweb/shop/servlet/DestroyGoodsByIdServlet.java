@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+//根据id删除商品
 @WebServlet(urlPatterns = "/destroyGoodsById")
 public class DestroyGoodsByIdServlet extends HttpServlet {
     MybatisMapperUtil util= new MybatisMapperUtil();
